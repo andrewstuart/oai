@@ -64,6 +64,8 @@ var chatCmd = &cobra.Command{
 		} else {
 			sess.Model = openai.ChatModelGPT35Turbo0301
 		}
+		temp, _ := cmd.Flags().GetFloat64("temp")
+		sess.Tpl.Temperature = &temp
 
 		go func() {
 			<-ctx.Done()
@@ -123,6 +125,7 @@ func init() {
 	chatCmd.Flags().StringP("prompt", "p", "", "A prompt to override the default")
 	chatCmd.Flags().String("personality", "", "Shorthand for a personality to use as the speaking style for the prompt.")
 	chatCmd.Flags().String("model", openai.ChatModelGPT4, "The model to use for chat completion")
+	chatCmd.Flags().Float64P("temp", "t", 0, "The temperature to use for chat completion")
 	// chatCmd.Flags().String("resume", "", "Resume a chat from file") TODO: add resume
 	chatCmd.RegisterFlagCompletionFunc("model", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		ourModels := []string{openai.ChatModelGPT35Turbo, openai.ChatModelGPT35Turbo0301}
