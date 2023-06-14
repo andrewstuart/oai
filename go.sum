@@ -54,10 +54,8 @@ github.com/alecthomas/units v0.0.0-20190717042225-c3de453c63f4/go.mod h1:ybxpYRF
 github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d/go.mod h1:rBZYJk541a8SKzHPHnH3zbiI+7dagKZ0cgpgrD7Fyho=
 github.com/andrewstuart/multierrgroup v1.1.0 h1:lnYqDjTv24WYtThU0z9MIOjDNjaUVY8ASY9HXr+RHSg=
 github.com/andrewstuart/multierrgroup v1.1.0/go.mod h1:v2FmKM/RW5mpZrHFd4KfyhGjoFBMNXSBwU6WPkYB1wE=
-github.com/andrewstuart/openai v0.22.0 h1:QqXQWEXB/4vCtCSZOyzDD1ElhIGBUWMO94TcO88BRx8=
-github.com/andrewstuart/openai v0.22.0/go.mod h1:XCUkITc1BR5lZPE2ixhy3lZrernT3+uy1o6jx6p4LjY=
-github.com/andrewstuart/openai v0.23.0 h1:cy0WY5XyekyovOPCM6AOC5zwJvAWfIVkEQrWDdMmbo8=
-github.com/andrewstuart/openai v0.23.0/go.mod h1:JR1KY97gaPx41KMrNSmubtkICT/j/pmXViXrO/yxK/Y=
+github.com/andrewstuart/openai v0.24.0 h1:Yd/ErDW1iP5JTUkEbTt5/CyMaysGMJzVltJyESSF+iw=
+github.com/andrewstuart/openai v0.24.0/go.mod h1:JR1KY97gaPx41KMrNSmubtkICT/j/pmXViXrO/yxK/Y=
 github.com/andrewstuart/p v1.0.0 h1:7A0xgmmrYVDp7xxV92eMqT3Hx9Q/tC45/z34+RQaE6c=
 github.com/andrewstuart/p v1.0.0/go.mod h1:xg4BQ/HBGs32ihHHiTdJraFbAE/NOPhnB0KMjRW+PaY=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
