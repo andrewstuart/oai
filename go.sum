@@ -56,6 +56,8 @@ github.com/andrewstuart/multierrgroup v1.1.0 h1:lnYqDjTv24WYtThU0z9MIOjDNjaUVY8A
 github.com/andrewstuart/multierrgroup v1.1.0/go.mod h1:v2FmKM/RW5mpZrHFd4KfyhGjoFBMNXSBwU6WPkYB1wE=
 github.com/andrewstuart/openai v0.24.0 h1:Yd/ErDW1iP5JTUkEbTt5/CyMaysGMJzVltJyESSF+iw=
 github.com/andrewstuart/openai v0.24.0/go.mod h1:JR1KY97gaPx41KMrNSmubtkICT/j/pmXViXrO/yxK/Y=
+github.com/andrewstuart/openai v0.27.0 h1:nFj/6JUVY93bIoVQEVqlVOqSRoOWfJ1fHaiYoMUUBD8=
+github.com/andrewstuart/openai v0.27.0/go.mod h1:JR1KY97gaPx41KMrNSmubtkICT/j/pmXViXrO/yxK/Y=
 github.com/andrewstuart/p v1.0.0 h1:7A0xgmmrYVDp7xxV92eMqT3Hx9Q/tC45/z34+RQaE6c=
 github.com/andrewstuart/p v1.0.0/go.mod h1:xg4BQ/HBGs32ihHHiTdJraFbAE/NOPhnB0KMjRW+PaY=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=

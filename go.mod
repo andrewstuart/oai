@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.6
 	github.com/andrewstuart/multierrgroup v1.1.0
-	github.com/andrewstuart/openai v0.24.0
+	github.com/andrewstuart/openai v0.27.0
 	github.com/andrewstuart/p v1.0.0
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/gopuff/morecontext v0.4.1

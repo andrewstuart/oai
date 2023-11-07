@@ -124,7 +124,7 @@ func init() {
 	rootCmd.AddCommand(chatCmd)
 	chatCmd.Flags().StringP("prompt", "p", "", "A prompt to override the default")
 	chatCmd.Flags().String("personality", "", "Shorthand for a personality to use as the speaking style for the prompt.")
-	chatCmd.Flags().String("model", openai.ChatModelGPT40613, "The model to use for chat completion")
+	chatCmd.Flags().String("model", openai.ChatModelGPT4TurboPreview, "The model to use for chat completion")
 	chatCmd.Flags().Float64P("temp", "t", 0, "The temperature to use for chat completion")
 	// chatCmd.Flags().String("resume", "", "Resume a chat from file") TODO: add resume
 	chatCmd.RegisterFlagCompletionFunc("model", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
@@ -134,7 +134,7 @@ func init() {
 			return ourModels, 0
 		}
 		if ms.Has(openai.ChatModelGPT4) {
-			ourModels = append(ourModels, openai.ChatModelGPT4, openai.ChatModelGPT40314, openai.ChatModelGPT40613)
+			ourModels = append(ourModels, openai.ChatModelGPT4, openai.ChatModelGPT40314, openai.ChatModelGPT40613, openai.ChatModelGPT4TurboPreview)
 		}
 		if ms.Has(openai.ChatModelGPT432K) {
 			ourModels = append(ourModels, openai.ChatModelGPT432K, openai.ChatModelGPT432K0314)
