@@ -303,10 +303,11 @@ var chatCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
+
 		if models.Has(m) {
 			sess.Model = m
 		} else {
-			sess.Model = openai.ChatModelGPT35Turbo0301
+			sess.Model = openai.ChatModelGPT4TurboPreview
 		}
 		temp, _ := cmd.Flags().GetFloat64("temp")
 		sess.Tpl.Temperature = &temp

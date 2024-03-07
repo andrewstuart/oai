@@ -225,7 +225,7 @@ func (m histModel) View() string {
 	item, ok := m.list.SelectedItem().(histitem)
 	pr := ""
 	if ok {
-		pr = promptStyle.Render(item.sess.Messages[0].Content) + "\n"
+		pr = promptStyle.Render(item.sess.Model+": "+item.sess.Messages[0].Content) + "\n"
 		// m.r(item.sess)
 	}
 
