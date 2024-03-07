@@ -337,16 +337,13 @@ func init() {
 	chatCmd.Flags().Float64P("temp", "t", 0, "The temperature to use for chat completion")
 
 	chatCmd.RegisterFlagCompletionFunc("model", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		ourModels := []string{openai.ChatModelGPT35Turbo, openai.ChatModelGPT35Turbo0301, openai.ChatModelGPT35Turbo0613, openai.ChatModelGPT35Turbo0613}
 		ms, err := c.Models(ctx)
 		if err != nil {
-			return ourModels, 0
+			return []string{openai.ChatModelGPT35Turbo, openai.ChatModelGPT35Turbo0301, openai.ChatModelGPT35Turbo0613, openai.ChatModelGPT35Turbo0613}, 0
 		}
-		if ms.Has(openai.ChatModelGPT4) {
-			ourModels = append(ourModels, openai.ChatModelGPT4, openai.ChatModelGPT40314, openai.ChatModelGPT40613, openai.ChatModelGPT4TurboPreview)
-		}
-		if ms.Has(openai.ChatModelGPT432K) {
-			ourModels = append(ourModels, openai.ChatModelGPT432K, openai.ChatModelGPT432K0314)
+		ourModels := make([]string, 0, len(ms))
+		for _, m := range ms {
+			ourModels = append(ourModels, m.ID)
 		}
 		return ourModels, 0
 	})
