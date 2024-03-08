@@ -320,7 +320,7 @@ var chatCmd = &cobra.Command{
 		if err != nil {
 			return fmt.Errorf("error running program: %w", err)
 		}
-		if out != nil {
+		if out != nil && len(sess.Messages) > 1 {
 			out.Seek(0, 0)
 			json.NewEncoder(out).Encode(sess)
 		}
