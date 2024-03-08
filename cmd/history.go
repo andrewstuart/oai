@@ -55,6 +55,21 @@ type histModel struct {
 
 const listWidth = 40
 
+func (m *histModel) rm(i histitem) error {
+	p := viper.GetString("history.path")
+	err := os.Remove(path.Join(p, i.file))
+	if err != nil {
+		return fmt.Errorf("could not remove history file: %w", err)
+	}
+	idx := m.list.Index()
+	err = m.loadList()
+	if err != nil {
+		return fmt.Errorf("could not reload history list: %w", err)
+	}
+	m.list.Select(idx)
+	return nil
+}
+
 func (m *histModel) loadList() error {
 	p := viper.GetString("history.path")
 	fs, err := os.ReadDir(p)
@@ -99,8 +114,12 @@ func (m *histModel) loadList() error {
 	// }
 	d := list.NewDefaultDelegate()
 
-	m.list = list.New(items, d, listWidth, 50)
-	m.list.Title = "Chat History"
+	if m.list.Items() == nil {
+		m.list = list.New(items, d, listWidth, 50)
+		m.list.Title = "Chat History"
+	} else {
+		m.list.SetItems(items)
+	}
 	// m.list.KeyMap.PrevPage = key.NewBinding(key.WithKeys("left"))
 	// m.list.KeyMap.NextPage = key.NewBinding(key.WithKeys("right"))
 	return nil
@@ -137,6 +156,14 @@ func (m histModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.cvToggle = !m.cvToggle
 		case "ctrl+c", "q":
 			return m, tea.Quit
+		case "delete":
+			item, ok := m.list.SelectedItem().(histitem)
+			if ok {
+				err := m.rm(item)
+				if err != nil {
+					log.Println(err)
+				}
+			}
 		}
 	}
 
